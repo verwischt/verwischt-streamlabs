@@ -1,4 +1,3 @@
-
 setTimeout(function getNickname() {
 
 // Oculta o logo no cabeçálho do alerta
