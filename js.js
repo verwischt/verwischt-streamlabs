@@ -1,13 +1,14 @@
 
 setTimeout(function getNickname() {
-// Procura de define a variável do nickname
+// Oculta o logo no cabeçálho do alerta
+        var divLogo = document.getElementById("alert-header-logo");
+        divLogo.style.display = 'none';
+
+// Procura e define a variável do nickname nas DIVs de referência.
     var divNickname = document.getElementById("alert-message");
     let nickname = divNickname.innerText;
 
-// Escreve o nickname na header
+// Escreve o nickname no cabeçálho do alerta
     var divHeader = document.getElementById("alert-header");
-    divHeader.innerHTML = `<span id="alert-header-text" class="glitch" data-glitch="${nickname}">${nickname}</span>`;
-
-    var divLogo = document.getElementById("alert-header-logo");
-    divLogo.style.display = 'none'
+    divHeader.innerHTML = `<span id="alert-header-text-nick" class="glitch" data-glitch="${nickname}">${nickname}</span>`;
 }, 2500);

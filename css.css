@@ -6,6 +6,7 @@
 
 }
 
+/* Centraliza todos as divs verticalmente e horizontalmente. */
 html {
     background-color: chartreuse;
     display: flex;
@@ -14,21 +15,18 @@ html {
     height: 100vh;
 }
 
-/* Container do código */
-
-
-/* Margem em todas as divs */
+/* Coloca uma margem em todas as divs dentro dela. */
 #alert div {
     margin: 2.5px;
 }
 
-
+/* Container do alerta = Define tamanho máximo do cabeçálho do alerta. */
 #alert-container {
     width: max-content;
     height: max-content;
 }
 
-/* Logo do canal */
+/* Centraliza os elementos do alerta */
 #alert-header-align-center {
     justify-content: center;
     display: flex;
@@ -41,47 +39,7 @@ html {
     background-color: #1D2222;
     overflow: hidden;
     border-right: 6px solid #fff0c9;
-    animation: growRight 0.5s cubic-bezier(.76, .05, .86, .06) 0s both, colapseGrowRight 1s cubic-bezier(.76, .05, .86, .06) 2.1s;
-}
-
-@keyframes growRight {
-    0% {
-        width: 0px;
-        padding: 5px 0px 5px 0px;
-        border-right: 100px solid #fff0c9;
-    }
-
-    100% {
-        width: 100%;
-        padding: 5px 15px 5px 15px;
-        border-right: 6px solid #fff0c9;
-    }
-}
-
-@keyframes colapseGrowRight {
-    0% {
-        width: 100%;
-        padding: 5px 15px 5px 15px;
-        border-right: 6px solid #fff0c9;
-    }
-
-    35% {
-        width: 0%;
-        padding: 5px 0px 5px 0px;
-        border-right: 100px solid #fff0c9;
-    }
-
-    65% {
-        width: 0%;
-        padding: 5px 0px 5px 0px;
-        border-right: 6px solid #fff0c9;
-    }
-
-    100% {
-        width: 100%;
-        padding: 5px 15px 5px 15px;
-        border-right: 6px solid #fff0c9;
-    }
+    animation: growRight 0.5s cubic-bezier(.76, .05, .86, .06) 0s both, colapseLeft 1s cubic-bezier(.76, .05, .86, .06) 2.1s;
 }
 
 /* Logo do canal */
@@ -91,10 +49,10 @@ html {
     margin-right: 10px;
     font-size: 30px;
     margin-top: -1px;
-    /* animation: scaleaHeaderItemsIn 0.4s linear both, scaleaHeaderItemsInOutIn 0.5s linear 2.4s; */
+    animation: scaleaHeaderItemsIn 0.4s linear both, scaleaHeaderItemsInOutIn 0.5s linear 2.4s;
 }
 
-/* Tipo de  */
+/* Tipo de alerta */
 #alert-header-text {
     font-family: 'Oswald', sans-serif;
     font-size: 36px;
@@ -104,31 +62,20 @@ html {
     margin-top: -4px;
     white-space: nowrap;
     text-overflow: clip;
-    /* animation: scaleaHeaderItemsIn 0.5s linear both, scaleaHeaderItemsInOutIn 0.8s linear 2.3s; */
+    animation: scaleaHeaderItemsIn 0.4s linear both, scaleaHeaderItemsInOutIn 0.8s linear 2.3s;
 }
 
-@keyframes scaleaHeaderItemsIn {
-    0% {
-        scale: 0%;
-    }
-
-    100% {
-        scale: 100%
-    }
-}
-
-@keyframes scaleaHeaderItemsInOutIn {
-    0% {
-        scale: 100%;
-    }
-
-    60% {
-        scale: 0%;
-    }
-
-    100% {
-        scale: 100%;
-    }
+/* Nick da pessoa */
+#alert-header-text-nick {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff0c9;
+    margin-top: -4px;
+    white-space: nowrap;
+    text-overflow: clip;
+    animation: scaleaHeaderItemsIn 0.4s linear 0.3s both;
 }
 
 /* Alinha texto e logo */
@@ -148,15 +95,7 @@ html {
     background-color: #d2691e;
 }
 
-/* Divs de referência */
-#alert-image-wrap {
-    visibility: hidden;
-}
-
-#alert-text-wrap {
-    opacity: 0%;
-}
-
+/* Classe que dá a animação de glitch aos textos */
 .glitch {
     color: #fff0c9;
     position: relative;
@@ -164,9 +103,10 @@ html {
     animation: glitchColorAni0 0.2s linear 1s;;
 }
 
+/* A seguir está os pseudo-elementos que definem os parametros da animação do glitch */
 .glitch::before,
 .glitch::after {
-    content: attr(data-glitch);
+    content: attr(data-glitch); /* Para que o efeito do glitch funcione, o elemento alvo tem de ser um TEXTO e este texto deve ser repetido dentro do parâmetro data-glitch="TEXTO" que deve obrigatóriamente ter sido declarado na tag. */
     position: absolute;
     top: 0;
     left: 0;
@@ -180,6 +120,82 @@ html {
 .glitch::after {
     animation: glitchAni2 1.4s linear, glitchColorAni2 0.4s linear 0.9s, glitchColorAni1 0.4s linear;
 }
+
+/* / * / * / * / * / * / * / * / * / * / * / */
+/*                                           */
+/*      TODAS AS DESGRAÇAS DAS ANIMAÇÕES     */
+/*                                           */
+/* / * / * / * / * / * / * / * / * / * / * / */
+
+/* Animação dos elementos dentro do alerta (Zoom sutil) [Entrando]. */
+@keyframes scaleaHeaderItemsIn {
+    0% {
+        scale: 0%;
+    }
+    
+    100% {
+        scale: 100%
+    }
+}
+
+/* Animação dos elementos dentro do alerta (Zoom sutil) [Ativo > Saindo > Entrando]. */
+@keyframes scaleaHeaderItemsInOutIn {
+    0% {
+        scale: 100%;
+    }
+    
+    60% {
+        scale: 0%;
+    }
+    
+    100% {
+        scale: 100%;
+    }
+}
+
+/* Animação do alerta crescendo da esquerda para a direita. */
+@keyframes growRight {
+    0% {
+        width: 0px;
+        padding: 5px 0px 5px 0px;
+        border-right: 100px solid #fff0c9;
+    }
+
+    100% {
+        width: 100%;
+        padding: 5px 15px 5px 15px;
+        border-right: 6px solid #fff0c9;
+    }
+}
+
+/* Animação do alerta diminuindo da direita para a esquerda. */
+@keyframes colapseLeft {
+    0% {
+        width: 100%;
+        padding: 5px 15px 5px 15px;
+        border-right: 6px solid #fff0c9;
+    }
+    
+    35% {
+        width: 0%;
+        padding: 5px 0px 5px 0px;
+        border-right: 100px solid #fff0c9;
+    }
+    
+    65% {
+        width: 0%;
+        padding: 5px 0px 5px 0px;
+        border-right: 6px solid #fff0c9;
+    }
+    
+    100% {
+        width: 100%;
+        padding: 5px 15px 5px 15px;
+        border-right: 6px solid #fff0c9;
+    }
+}
+
+/* Animação do Glitch (bordas do texto / Ciano) */
 @keyframes glitchAni1 {
     0% {
         clip-path: inset(40% 0% 0% 0%); /* ⬇ ⬅ ⬆ ➡ */
@@ -260,6 +276,7 @@ html {
     }
 }
 
+/* Animação do Glitch (bordas do texto / Magenta) */
 @keyframes glitchAni2 {
     0% {
         clip-path: inset(17.77% 0% 63.84% 0%);
@@ -340,6 +357,7 @@ html {
     }
 }
 
+/* Animação do Glitch (Cores do texto / DIV principal) */
 @keyframes glitchColorAni0 {
     0% {
         color: #bfb304;
@@ -403,6 +421,7 @@ html {
     }     
 }
 
+/* Animação do Glitch (Cores do texto / Pseudo DIV principal / ::before) */
 @keyframes glitchColorAni1 {
     0% {
         left: -0.9%;
@@ -485,6 +504,8 @@ html {
         color: #000000;
     }     
 }
+
+/* Animação do Glitch (Cores do texto / Pseudo DIV principal / ::after) */
 @keyframes glitchColorAni2 {
     0% {
         left: -0.9%;
@@ -566,4 +587,18 @@ html {
         left: 0%;
         color: #000000;
     }     
+}
+
+/* / * / * / * / * / * / * / * / * / * / * / */
+/*                                           */
+/*        DIVS de referência do script       */
+/*                                           */
+/* / * / * / * / * / * / * / * / * / * / * / */
+
+#alert-image-wrap {
+    visibility: hidden; /* Se for usar o gif do streamlabs, substitua "hidden" por "visible". */
+}
+
+#alert-text-wrap {
+    opacity: 0%; /* Pro script conseguir ver os dados, não posso deixar invisível como a de cima. Pra driblar isso, coloquei a opacidade em 0%. */
 }
