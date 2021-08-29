@@ -8,30 +8,35 @@
 <body>
     <script src="js.js"></script>
 
-    <div id="alert"> <!-- Esta tag só existe pra organização. Ela é promada para definir uma margem de 2.5 pixeis entre cada div dentro dela. Não é muito importante. -->
-        <div id="alert-container"> <!-- Esta tag define o tamanho do alerta. É importante. -->
-            <div id="alert-header-align-center"> <!-- Esta tag centraliza os elementos do alerta. Estéticamente importante. -->
-                <div id="alert-header"> <!-- Esta é a div que receberá as informações do alerta (Tipo de alerta, nick da pessoa, etc.). Obvio, é importante.-->
-                    <span id="alert-header-logo" class="glitch" data-glitch="@">@</span> <!-- Este span é onde coloquei minha logo. Note que a logo é um caractere (@) tem ser assim para que o efeito do glitch funcione (ele não funciona com imagens e SVGs). Não é tão importante se não quiser. -->
-                    <span id="alert-header-text" class="glitch" data-glitch="Nova inscrição!">Nova inscrição!</span> <!-- Este é o span que vai conter o tipo do alerta. Não consegui fazer um scipt para atualiza-lo automaticamente, portanto para cada tipo, terá de mudar aqui. É importante. -->
+    <section> <!-- Quando for copiar o código HTML para o stream labs, copie apenas o que estiver dentro dessa sessão. -->
+
+        <div id="alert"> <!-- Esta tag só existe pra organização. Ela é promada para definir uma margem de 2.5 pixeis entre cada div dentro dela. Não é muito importante. -->
+            <div id="alert-container"> <!-- Esta tag define o tamanho do alerta. É importante. -->
+                <div id="alert-header-align-center"> <!-- Esta tag centraliza os elementos do alerta. Estéticamente importante. -->
+                    <div id="alert-header"> <!-- Esta é a div que receberá as informações do alerta (Tipo de alerta, nick da pessoa, etc.). Obvio, é importante.-->
+                        <span id="alert-header-logo" class="glitch" data-glitch="@">@</span> <!-- Este span é onde coloquei minha logo. Note que a logo é um caractere (@) tem ser assim para que o efeito do glitch funcione (ele não funciona com imagens e SVGs). Não é tão importante se não quiser. -->
+                        <span id="alert-header-text" class="glitch" data-glitch="Nova inscrição!">Nova inscrição!</span> <!-- Este é o span que vai conter o tipo do alerta. Não consegui fazer um scipt para atualiza-lo automaticamente, portanto para cada tipo, terá de mudar aqui. É importante. -->
+                    </div>
+                </div>
+                <div id="alert-message-box"> <!-- Esta é a div que recebe a mensagem do alerta caso ele possua. Por enquanto está desativado pois não configurei isso ainda. Não é importante por enquanto, mas deixa aí-->
+                    <!-- <span id="alert-message-box-text">{userMessage}</span> -->
                 </div>
             </div>
-            <div id="alert-message-box"> <!-- Esta é a div que recebe a mensagem do alerta caso ele possua. Por enquanto está desativado pois não configurei isso ainda. Não é importante por enquanto, mas deixa aí-->
-                <!-- <span id="alert-message-box-text">{userMessage}</span> -->
+        </div>
+
+        <div id="alert-image-wrap"> <!-- Por padrão, é aqui que o streamlabs coloca aquele gif. Eu não uso, mas deixei aqui para caso eu queira implementar algo no futuro. Pode excluir se quiser. -->
+            <div id="alert-image"></div>
+        </div>
+
+        <!-- Essa parte é importantíssima! É daqui que virá as informações do StreamLabs (nick da pessoa e mensagem). Criei um script que puxa daqui e coloca nas divs ali em cima. Não apague nem modifique esta sequencia de DIVs.  -->
+        <div id="alert-text-wrap">
+            <div id="alert-text">
+                <div id="alert-message">{messageTemplate}</div>
+                <div id="alert-user-message">{userMessage}</div>
             </div>
         </div>
-    </div>
 
-    <div id="alert-image-wrap"> <!-- Por padrão, é aqui que o streamlabs coloca aquele gif. Eu não uso, mas deixei aqui para caso eu queira implementar algo no futuro. Pode excluir se quiser. -->
-        <div id="alert-image"></div>
-    </div>
+    </section>
 
-    <!-- Essa parte é importantíssima! É daqui que virá as informações do StreamLabs (nick da pessoa e mensagem). Criei um script que puxa daqui e coloca nas divs ali em cima. Não apague nem modifique esta sequencia de DIVs.  -->
-    <div id="alert-text-wrap">
-        <div id="alert-text">
-            <div id="alert-message">{messageTemplate}</div>
-            <div id="alert-user-message">{userMessage}</div>
-        </div>
-    </div>
 </body>
 </html>
