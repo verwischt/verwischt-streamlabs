@@ -1,0 +1,410 @@
+.glitch {
+    color: #fff0c9;
+    position: relative;
+    display: inline-block;
+    animation: glitchColorAni0 0.2s linear 1s;;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: max-content;
+    height: max-content;
+    background: rgba(0, 0, 0, 0);
+}
+.glitch::before {
+    animation: glitchAni1 0.7s linear, glitchColorAni1 0.3s linear 1s, glitchColorAni1 0.2s linear;
+}
+.glitch::after {
+    animation: glitchAni2 1.4s linear, glitchColorAni2 0.4s linear 0.9s, glitchColorAni1 0.4s linear;
+}
+@keyframes glitchAni1 {
+    0% {
+        clip-path: inset(40% 0% 0% 0%); /* ⬇ ⬅ ⬆ ➡ */
+        text-shadow: -2px 0px 0 #00b5b5a1;
+    }
+    4.166666666666666% {
+        clip-path: inset(76.61% 0% 0% 0%);
+    }
+    8.333333333333332% {
+        clip-path: inset(0% 0% 40.18% 0%);
+    }
+    12.5% {
+        clip-path: inset(0.72% 0% 6.70% 0%);
+    }
+    16.666666666666664% {
+        clip-path: inset(0.72% 0% 32.15% 0%);
+    }
+    20.833333333333336% {
+        clip-path: inset(10.72% 0% 58.49% 0%);
+    }
+    25% {
+        clip-path: inset(43.58% 0% 25.01% 0%);
+    }
+    29.166666666666668% {
+        clip-path: inset(43.58% 0% 46.44% 0%);
+    }
+    33.33333333333333% {
+        clip-path: inset(24.83% 0% 46.44% 0%);
+    }
+    37.5% {
+        clip-path: inset(24.83% 0% 21.89% 0%);
+    }
+    41.66666666666667% {
+        clip-path: inset(61.88% 0% 21.89% 0%);
+    }
+    45.83333333333333% {
+        clip-path: inset(27.51% 0% 60.28% 0%);
+    }
+    50% {
+        clip-path: inset(79.3% 0% 0% 0%);
+    }
+    54.166666666666664% {
+        clip-path: inset(47.16% 0% 48.67% 0%);
+    }
+    58.333333333333336% {
+        clip-path: inset(56.98% 0% 36.17% 0%);
+    }
+    62.5% {
+        clip-path: inset(67.69% 0% 25.01% 0%);
+    }
+    66.66666666666666% {
+        clip-path: inset(45.81% 0% 25.01% 0%);
+    }
+    70.83333333333334% {
+        clip-path: inset(45.81% 0% 47.33% 0%);
+    }
+    75% {
+        clip-path: inset(30.19% 0% 61.62% 0%);
+    }
+    79.16666666666666% {
+        clip-path: inset(30.19% 0% 29.48% 0%);
+    }
+    83.33333333333334% {
+        clip-path: inset(62.33% 0% 29.48% 0%);
+    }
+    87.5% {
+        clip-path: inset(13.22% 0% 29.48% 0%);
+    }
+    91.66666666666666% {
+        clip-path: inset(13.22% 0% 7.61% 0%);
+    }
+    95.83333333333334% {
+        clip-path: inset(13.22% 0% 64.31% 0%);
+    }
+    100% {
+        clip-path: inset(100% 0% 0% 0%);
+        text-shadow: -2px 0px 0 #00b5b5a1;
+    }
+}
+
+@keyframes glitchAni2 {
+    0% {
+        clip-path: inset(17.77% 0% 63.84% 0%);
+        text-shadow: -2px 0px 0 #d50462a1;
+    }
+    4.166666666666666% {
+        clip-path: inset(48.57% 0% 41.52% 0%)
+    }
+    8.333333333333332% {
+        clip-path: inset(48.57% 0% 20.98% 0%)
+    }
+    12.5% {
+        clip-path: inset(70.89% 0% 20.98% 0%)
+    }
+    16.666666666666664% {
+        clip-path: inset(22.68% 0% 20.98% 0%)
+    }
+    20.833333333333336% {
+        clip-path: inset(22.68% 0% 70.53% 0%)
+    }
+    25% {
+        clip-path: inset(9.29% 0% 70.53% 0%)
+    }
+    29.166666666666668% {
+        clip-path: inset(9.29% 0% 83.92% 0%)
+    }
+    33.33333333333333% {
+        clip-path: inset(83.84% 0% 9.37% 0%)
+    }
+    37.5% {
+        clip-path: inset(72.68% 0% 17.41% 0%)
+    }
+    41.66666666666667% {
+        clip-path: inset(55.72% 0% 40.62% 0%)
+    }
+    45.83333333333333% {
+        clip-path: inset(66.43% 0% 29.01% 0%)
+    }
+    50% {
+        clip-path: inset(31.16% 0% 29.01% 0%)
+    }
+    54.166666666666664% {
+        clip-path: inset(31.16% 0% 58.03% 0%)
+    }
+    58.333333333333336% {
+        clip-path: inset(18.21% 0% 58.03% 0%)
+    }
+    62.5% {
+        clip-path: inset(18.21% 0% 8.03% 0%)
+    }
+    66.66666666666666% {
+        clip-path: inset(66.42% 0% 8.03% 0%)
+    }
+    70.83333333333334% {
+        clip-path: inset(39.19% 0% 35.26% 0%)
+    }
+    75% {
+        clip-path: inset(74.01% 0% 20.53% 0%)
+    }
+    79.16666666666666% {
+        clip-path: inset(52.58% 0% 41.96% 0%)
+    }
+    83.33333333333334% {
+        clip-path: inset(23.56% 0% 41.96% 0%)
+    }
+    87.5% {
+        clip-path: inset(1.24% 0% 83.03% 0%)
+    }
+    91.66666666666666% {
+        clip-path: inset(54.81% 0% 9.37% 0%)
+    }
+    95.83333333333334% {
+        clip-path: inset(82.04% 0% 9.37% 0%)
+    }
+    100% {
+        clip-path: inset(100% 0% 0% 0%);
+        text-shadow: -2px 0px 0 #d50462a1;
+    }
+}
+
+@keyframes glitchColorAni0 {
+    0% {
+        color: #bfb304;
+    }
+    1.9999999999% {
+        color: #bfb304;
+    }
+    2% {
+        color:#00b5b5;
+    }
+    4.9999999999% {
+        color:#00b5b5;
+    }
+    5% {
+        color:#fff0c9;
+    }
+    14.9999999999% {
+        color:#fff0c9;
+    }
+    15% {
+        color:#d50463;
+    }
+    19.9999999999% {
+        color:#d50463;
+    }
+    20% {
+        color:#00b5b5;
+    }
+    25.9999999999% {
+        color:#00b5b5;
+    }
+    26% {
+        color: #bfb304;
+    }
+    29.9999999999% {
+        color: #bfb304;
+    }
+    30% {
+        color:#fff0c9;
+    }
+    65.9999999999% {
+        color:#fff0c9;
+    }
+    66% {
+        color:#d50463;
+    }
+    69.9999999999% {
+        color:#d50463;
+    }
+    70% {
+        color:#fff0c9;
+    }
+    97.9999999999% {
+        color:#fff0c9;
+    }
+    98% {
+        color: #ffb700;
+    }
+    100% {
+        color: #000000;
+    }     
+}
+
+@keyframes glitchColorAni1 {
+    0% {
+        left: -0.9%;
+        color: #bfb304;
+    }
+    1.9999999999% {
+        left: 0.9%;
+        color: #bfb304;
+    }
+    2% {
+        left: -0.9%;
+        color:#00b5b5;
+    }
+    4.9999999999% {
+        left: 2%;
+        color:#00b5b5;
+    }
+    5% {
+        left: 2%;
+        color:#fff0c9;
+    }
+    14.9999999999% {
+        left: 2%;
+        color:#fff0c9;
+    }
+    15% {
+        left: -3%;
+        color:#d50463;
+    }
+    19.9999999999% {
+        left: 3%;
+        color:#d50463;
+    }
+    20% {
+        left: 3%;
+        color:#00b5b5;
+    }
+    25.9999999999% {
+        left: 3%;
+        color:#00b5b5;
+    }
+    26% {
+        left: 4%;
+        color: #bfb304;
+    }
+    29.9999999999% {
+        left: 2%;
+        color: #bfb304;
+    }
+    30% {
+        left: 1%;
+        color:#fff0c9;
+    }
+    65.9999999999% {
+        left: 5%;
+        color:#fff0c9;
+    }
+    66% {
+        left: 2%;
+        color:#d50463;
+    }
+    69.9999999999% {
+        left: 2%;
+        color:#d50463;
+    }
+    70% {
+        left: 1%;
+        color:#fff0c9;
+    }
+    97.9999999999% {
+        left: 2%;
+        color:#fff0c9;
+    }
+    98% {
+        left: 4%;
+        color: #ffb700;
+    }
+    100% {
+        left: 0%;
+        color: #000000;
+    }     
+}
+@keyframes glitchColorAni2 {
+    0% {
+        left: -0.9%;
+        color: #bfb304;
+    }
+    1.9999999999% {
+        left: 0.9%;
+        color: #bfb304;
+    }
+    2% {
+        left: -0.9%;
+        color:#00b5b5;
+    }
+    4.9999999999% {
+        left: -2%;
+        color:#00b5b5;
+    }
+    5% {
+        left: -2%;
+        color:#fff0c9;
+    }
+    14.9999999999% {
+        left: -2%;
+        color:#fff0c9;
+    }
+    15% {
+        left: -3%;
+        color:#d50463;
+    }
+    19.9999999999% {
+        left: 3%;
+        color:#d50463;
+    }
+    20% {
+        left: -3%;
+        color:#00b5b5;
+    }
+    25.9999999999% {
+        left: -3%;
+        color:#00b5b5;
+    }
+    26% {
+        left: -4%;
+        color: #bfb304;
+    }
+    29.9999999999% {
+        left: 2%;
+        color: #bfb304;
+    }
+    30% {
+        left: 1%;
+        color:#fff0c9;
+    }
+    65.9999999999% {
+        left: 1%;
+        color:#fff0c9;
+    }
+    66% {
+        left: 2%;
+        color:#d50463;
+    }
+    69.9999999999% {
+        left: 2%;
+        color:#d50463;
+    }
+    70% {
+        left: 1%;
+        color:#fff0c9;
+    }
+    97.9999999999% {
+        left: 2%;
+        color:#fff0c9;
+    }
+    98% {
+        left: -4%;
+        color: #ffb700;
+    }
+    100% {
+        left: 0%;
+        color: #000000;
+    }     
+}
