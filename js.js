@@ -12,4 +12,3 @@ setTimeout(function getNickname() {
     var divHeader = document.getElementById("alert-header");
     divHeader.innerHTML = `<span id="alert-header-text-nick" class="glitch" data-glitch="${nickname}">${nickname}</span>`;
 }, 2500);
- fd
